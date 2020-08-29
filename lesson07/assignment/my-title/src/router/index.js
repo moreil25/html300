@@ -1,18 +1,19 @@
 import Vue from 'vue'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import Grid from '@/components/Grid'
+import Home from '@/components/Home'
 import Images from '@/components/Images'
 import Accordion from '@/components/Accordion'
 
 Vue.use(Router)
+Vue.use(BootstrapVue)
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path: '/home',
+      name: 'Home',
+      component: Home
     },
     {
       path: '/images',
@@ -23,11 +24,6 @@ export default new Router({
       path: '/accordion',
       name: 'Accordion',
       component: Accordion
-    },
-    {
-      path: '/grid',
-      name: 'Grid',
-      component: Grid
     }
   ]
 })
