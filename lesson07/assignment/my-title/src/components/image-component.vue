@@ -59,9 +59,10 @@ export default {
   <imageComponent></imageComponent>
   <!-- v-bind dynamically passes data -->
   <custom-image
-    v-bind:id=".id"
-    v-bind:src".src"
-    v-bind:alt=".alt">
+    v-bind:img="imageOne.img"
+    v-bind:src="imageOne.src"
+    v-bind:caption="imageOne.caption"
+    v-bind:alt="imageOne.alt">
 </template>
 
 <!--array of data that you will want to render a component for each one-->
