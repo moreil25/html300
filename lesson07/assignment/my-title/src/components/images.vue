@@ -28,11 +28,11 @@ Vue.component('image-component', {
     images: {
       type: Array
     }
-  }
+  },
 //do I want to use this as a template in the component or do i want to use this in the html template to create the v-for loop?
-  template: '<div class="wrapper" v-for="imageOne in images"></div>',
+  template: '<div class="wrapper" v-for="image in images"></div>',
   //same fields as instance, but data is no longer an object, but a function that returns object
-  data: function() {
+
 
 
 
