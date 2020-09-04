@@ -4,15 +4,13 @@
       <div class="col-lg-12 wrapper">
 <!-- v-for will have to go in a wrapper for each image (i.e. div) and create props for components-->
 <!--will wrapper div be written here or only in component?-->
-      <!--v-for directive renders a list of items in array, imageOne in images loops through that array//:src function refers to method created to pull images from source directory//dot notation calls on key values in objects-->
-        <!-- <img v-for="imageOne in images" @click="toggleBorder" class="img-fluid rounded m-2 img-border" :src="getPic(imageOne.src)" :title="imageOne.caption" :alt="imageOne.alt"/> -->
+      <!--v-for directive renders a list of items in array, imageOne in images loops through that array//:src function refers to method created to pull images from source directory//dot notation calls on key values in object-->
     <div class="wrapper" v-for="imageOne in images">
       <clickableImage
         v-bind:img="imageOne.img"
         v-bind:src="imageOne.src"
         v-bind:caption="imageOne.caption"
-        v-bind:alt="imageOne.alt"
-        @click="toggleBorder">
+        v-bind:alt="imageOne.alt"><span @click="toggleBorder()"></span>
       </clickableImage>
     </div>
     </div>
@@ -21,7 +19,7 @@
 
 <script>
 import clickableImage from './clickableImage';
-
+import clickMixin from './../clickMixin.js';
 
 export default {
   components: {
@@ -29,7 +27,7 @@ export default {
   },
   data () {
     return {
-  //these are the variables that are places in the HTML sections that change based on conditional statements
+  //these are the variables that are placed in the HTML sections that change based on conditional statements
       header: 'Images',
         images: [
           {
