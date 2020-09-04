@@ -5,44 +5,28 @@
 <!-- v-for will have to go in a wrapper for each image (i.e. div) and create props for components-->
 <!--will wrapper div be written here or only in component?-->
       <!--v-for directive renders a list of items in array, imageOne in images loops through that array//:src function refers to method created to pull images from source directory//dot notation calls on key values in objects-->
-        <img v-for="imageOne in images" @click="toggleBorder" class="img-fluid rounded m-2 img-border" :src="getPic(imageOne.src)" :title="imageOne.caption" :alt="imageOne.alt"/>
-    <!-- <div class="wrapper" v-for="image in images">
-      <clickable-image
+        <!-- <img v-for="imageOne in images" @click="toggleBorder" class="img-fluid rounded m-2 img-border" :src="getPic(imageOne.src)" :title="imageOne.caption" :alt="imageOne.alt"/> -->
+    <div class="wrapper" v-for="imageOne in images">
+      <clickableImage
         v-bind:img="imageOne.img"
         v-bind:src="imageOne.src"
         v-bind:caption="imageOne.caption"
-        v-bind:alt="imageOne.alt">
-        @click="toggleBorder"
-        </clickable-image>
-    </div> -->
+        v-bind:alt="imageOne.alt"
+        @click="toggleBorder">
+      </clickableImage>
+    </div>
     </div>
   </div>
 </template>
 
 <script>
-// Vue.component('clickable-image', {
-//
-//   //the props I want to receive are from my images array
-//   //prop validation = object
-//   //props are one way communication that the parents control the children's value
-//   props: {
-//     images: {
-//       type: Array //or Object?
-//     }
-//   },
-// //do I want to use this as a template in the component or do i want to use this in the html template to create the v-for loop?
-//   template: '<div class="wrapper" v-for="image in images"></div>',
-//   //same fields as instance, but data is no longer an object, but a function that returns object
-
-
-// const borderOn = {
-//   return {
-//     borderOn: true;
-//   }
-// },
+import clickableImage from './clickableImage';
 
 
 export default {
+  components: {
+    clickableImage
+  },
   data () {
     return {
   //these are the variables that are places in the HTML sections that change based on conditional statements
@@ -81,20 +65,10 @@ export default {
       ]
     }
   },
-  methods: {
-    getPic(pic) {
-      return require(`@/images/${pic}`)
-      }
-    }
+
   }
 </script>
 
-<style>
-  .img-border {
-    max-width: auto;
-    border: solid 4px black;
-  }
-</style>
 
 
 <!-- Net Ninja Props https://www.youtube.com/watch?v=9qqFH60isFc -->
