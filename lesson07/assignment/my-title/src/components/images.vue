@@ -10,7 +10,7 @@
         v-bind:img="imageOne.img"
         v-bind:src="imageOne.src"
         v-bind:caption="imageOne.caption"
-        v-bind:alt="imageOne.alt"><span @click="toggleBorder()"></span>
+        v-bind:alt="imageOne.alt"><span @click="toggleBorder(borderOn)"></span>
       </clickableImage>
     </div>
     </div>
@@ -25,6 +25,7 @@ export default {
   components: {
     clickableImage
   },
+  mixins: [borderOn],
   data () {
     return {
   //these are the variables that are placed in the HTML sections that change based on conditional statements

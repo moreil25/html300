@@ -1,6 +1,6 @@
 // need a mixin declaration
 
-const borderOn = {
+export const borderOn = {
   data ()
     return {
       borderOn: true

@@ -22,7 +22,7 @@ export default {
       default: 'Detailed image description'
     }
   },
-  // mixins: [toggleOn],
+  mixins: [borderOn],
   methods: {
     getPic(pic) {
       return require(`@/images/${pic}`)
@@ -35,7 +35,7 @@ export default {
 <!-- this 'collection' of elements is grouped together to be accessed by one element, using the same img element and method from lesson07, to access props -->
 <!--the props values above match the binds in the HTML -->
 <template>
-  <img class="img-fluid rounded m-2 img-border" :src="getPic(this.src)" :alt="this.alt"></img>
+  <img class="img-fluid rounded m-2 img-border" :src="getPic(this.src)" :alt="this.alt" @click="borderOn()"></img>
 </template>
 
 
