@@ -8,9 +8,9 @@ export default {
       }
     },
     methods: {
-      methods: {
         getBorder(border) {
           return require(`@/src/${border}`)
+        },
       toggleBorder() {
         this.borderOn = !this.borderOn;
       }
