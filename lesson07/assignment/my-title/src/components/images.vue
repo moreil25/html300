@@ -22,11 +22,10 @@ import clickableImage from './clickableImage';
 import { borderOn } from '/Users/merissaoreilly/Desktop/html300/lesson07/assignment/my-title/src/clickMixin.js';
 
 export default {
-    mixins: [borderOn],
   components: {
     clickableImage
   },
-
+  mixins: [borderOn],
 
   data () {
     return {

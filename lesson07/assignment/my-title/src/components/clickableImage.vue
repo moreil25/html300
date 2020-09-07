@@ -5,7 +5,6 @@ The image component should have props for at least the image src, alt, & title a
 
 export default {
   name: 'clickableImage',
-  mixins: [borderOn],
   //the props I want to receive are from my images array. prop validation = object. props are one-way communication that the parents control the children's value. props are declared on a component, which you then use in the <template> to result in the HTML output you expect
   props: {
     img: {
@@ -36,9 +35,10 @@ export default {
 <!-- this 'collection' of elements is grouped together to be accessed by one element, using the same img element and method from lesson07, to access props -->
 <!--the props values above match the binds in the HTML -->
 <template>
-  <img class="img-fluid rounded m-2 img-border" :src="getPic(this.src)" :alt="this.alt" @click="borderOn()"></img>
+  <img class="img-fluid rounded m-2 img-border" :src="getPic(this.src)" :alt="this.alt" @click="borderOn(this.img)" ></img>
 </template>
 
+<!-- @click="borderOn(this.)" -->
 
 <style>
   .img-border {

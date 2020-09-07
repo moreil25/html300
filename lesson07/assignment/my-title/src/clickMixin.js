@@ -1,15 +1,22 @@
 // need a mixin declaration
-<script>
-const borderOn = {
-  data ()
+
+export const borderOn = {
+  created(){
+    console.log('MIXIN')
+  },
+  data () {
     return {
       borderOn: false
-    },
+    }
+  },
     methods: {
-      toggleBorder() {
+      toggleBorder(img) {
         this.borderOn = !this.borderOn;
       }
     }
   }
 
-</script>
+  // .img-border {
+  //   max-width: auto;
+  //   border: solid 4px black;
+  // }
