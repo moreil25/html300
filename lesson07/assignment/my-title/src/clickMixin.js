@@ -1,18 +1,17 @@
 // need a mixin declaration
 
-export default {
-    data ()
-    const borderOn = {
-      return {
-        borderOn: true
+ // default {
+export const borderOn = {
+  data () {
+    return {
+      borderOn: false
       }
+
     },
     methods: {
-        getBorder(border) {
-          return require(`@/src/${border}`)
-        },
-      toggleBorder() {
+      toggleBorderOn() {
         this.borderOn = !this.borderOn;
       }
     }
-  }
+}
+// export default borderOn

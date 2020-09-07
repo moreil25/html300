@@ -2,8 +2,10 @@
 The image component should have props for at least the image src, alt, & title attributes, use prop validation. -->
 
 <script>
+
 export default {
   name: 'clickableImage',
+  mixins: [borderOn],
   //the props I want to receive are from my images array. prop validation = object. props are one-way communication that the parents control the children's value. props are declared on a component, which you then use in the <template> to result in the HTML output you expect
   props: {
     img: {
@@ -22,7 +24,6 @@ export default {
       default: 'Detailed image description'
     }
   },
-  mixins: [borderOn],
   methods: {
     getPic(pic) {
       return require(`@/images/${pic}`)

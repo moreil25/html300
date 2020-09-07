@@ -19,13 +19,15 @@
 
 <script>
 import clickableImage from './clickableImage';
-import clickMixin from './clickMixin.js';
+import { borderOn } from '/Users/merissaoreilly/Desktop/html300/lesson07/assignment/my-title/src/clickMixin.js';
 
 export default {
+    mixins: [borderOn],
   components: {
     clickableImage
   },
-  mixins: [borderOn],
+
+
   data () {
     return {
   //these are the variables that are placed in the HTML sections that change based on conditional statements
@@ -63,9 +65,9 @@ export default {
         }
       ]
     }
-  },
-
   }
+}
+
 </script>
 
 
