@@ -10,7 +10,7 @@ export const borderOn = {
     }
   },
     methods: {
-      toggleBorder(img) {
+      toggle: function() {
         this.borderOn = !this.borderOn;
       }
     }

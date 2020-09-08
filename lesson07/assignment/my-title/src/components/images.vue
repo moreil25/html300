@@ -10,7 +10,8 @@
         v-bind:img="imageOne.img"
         v-bind:src="imageOne.src"
         v-bind:caption="imageOne.caption"
-        v-bind:alt="imageOne.alt"><span @click="borderOn()"></span>
+        v-bind:alt="imageOne.alt"
+        @click="toggle()">
       </clickableImage>
     </div>
     </div>
@@ -68,7 +69,3 @@ export default {
 }
 
 </script>
-
-
-
-<!-- Net Ninja Props https://www.youtube.com/watch?v=9qqFH60isFc -->
