@@ -2,7 +2,8 @@
 The image component should have props for at least the image src, alt, & title attributes, use prop validation. -->
 
 <script>
-import { borderOn } from '/Users/merissaoreilly/Desktop/html300/lesson07/assignment/my-title/src/clickMixin.js';
+//importing the mixin from its file
+import { borderOn } from '../clickMixin.js';
 
 export default {
   name: 'clickableImage',
@@ -28,27 +29,17 @@ export default {
   methods: {
     getPic(pic) {
       return require(`@/images/${pic}`)
-      }
     }
-
+  }
 }
-
 </script>
 
 <!-- this 'collection' of elements is grouped together to be accessed by one element, using the same img element and method from lesson07, to access props -->
 <!--the props values above match the binds in the HTML -->
 <template>
-  <img class="img-fluid rounded m-2 img-border"
+  <img class="img-fluid rounded m-2 border-dark"
+  :class="{ border : borderOn }"
   :src="getPic(this.src)"
   :alt="this.alt"
   @click="toggle()"></img>
 </template>
-
-<!-- @click="borderOn(this.)" -->
-
-<style>
-  /* .img-border {
-    max-width: auto;
-    border: solid 4px black;
-  } */
-</style>

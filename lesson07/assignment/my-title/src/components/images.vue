@@ -10,8 +10,7 @@
         v-bind:img="imageOne.img"
         v-bind:src="imageOne.src"
         v-bind:caption="imageOne.caption"
-        v-bind:alt="imageOne.alt"
-        @click="toggle()">
+        v-bind:alt="imageOne.alt">
       </clickableImage>
     </div>
     </div>
@@ -20,13 +19,12 @@
 
 <script>
 import clickableImage from './clickableImage';
-import { borderOn } from '/Users/merissaoreilly/Desktop/html300/lesson07/assignment/my-title/src/clickMixin.js';
 
 export default {
   components: {
     clickableImage
   },
-  mixins: [borderOn],
+
 
   data () {
     return {
