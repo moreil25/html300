@@ -36,6 +36,7 @@ export default {
 
 <!-- this 'collection' of elements is grouped together to be accessed by one element, using the same img element and method from lesson07, to access props -->
 <!--the props values above match the binds in the HTML -->
+<!-- used Bootstrap border class and v-bind to apply it -->
 <template>
   <img class="img-fluid rounded m-2 border-dark"
   :class="{ border : borderOn }"
